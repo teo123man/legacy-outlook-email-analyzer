@@ -1,0 +1,22 @@
+# Secrets and local config
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Generated / personal data (reports, learned profile and model from the mailbox)
+*.xlsx
+*.xlsm
+*.eml
+category_profile*.json
+category_model*.joblib
+
+# Company-specific side projects, not part of the public app
+araclar/
+internet/
+vekalet/
+vekalet_taslaklari/
