@@ -69,8 +69,8 @@ emails are retried one by one. Token usage is printed at the end of each run.
 | `MAX_EMAILS`        | Maximum emails to process (newest first).            |
 | `DAYS_BACK`         | Only process emails received within this many days.  |
 | `OUTPUT_FILE`       | Output Excel file name.                              |
-| `EXCLUDE_CATEGORIES` | Comma-separated Outlook categories ignored when learning (default `Takip,Follow up`). |
-| `ARCHIVE_FOLDER` / `ARCHIVE_CATEGORY` / `ARCHIVE_MAX_ITEMS` | Archive folder name (default `2026`), the category name for "can be archived" mail, and how many of its newest mails to learn from (default 3000). |
+| `EXCLUDE_CATEGORIES` | Comma-separated Outlook categories ignored when learning (default `Follow up`). |
+| `ARCHIVE_FOLDER` / `ARCHIVE_CATEGORY` / `ARCHIVE_MAX_ITEMS` | Archive folder name (default `Archive`), the category name for "can be archived" mail, and how many of its newest mails to learn from (default 3000). |
 | `MODEL_TARGET_PRECISION` / `MODEL_ARCHIVE_MAX_FALSE` | Accuracy required before the classifier decides alone (0.9), and the share of important mails the archive detector may wrongly flag (0.01). |
 | `PROFILE_MAX_AGE_DAYS` | Rescan categories after this many days (default 7). |
 | `LEARN_MAX_ITEMS`   | Maximum mails scanned when learning (default 5000). |
@@ -87,9 +87,9 @@ category the mail count, typical senders and typical subject words. Claude then
 must pick one of **those** categories (or `Belirsiz` when none fits) instead of
 the generic list. The profile adds roughly 1,000-2,500 tokens to each Claude call.
 
-- **Archive category** (`ARCHIVE_CATEGORY`, default `2026'ya Aktarılabilir`): the
+- **Archive category** (`ARCHIVE_CATEGORY`, default `Can be archived`): the
   newest `ARCHIVE_MAX_ITEMS` mails of the owner's archive folder (`ARCHIVE_FOLDER`,
-  default `2026`) that have no category show which senders and topics never needed
+  default `Archive`) that have no category show which senders and topics never needed
   one. Claude uses this category only for purely informational mail (FYI,
   newsletters, ads, automatic notices). Anything with an action, reply, deadline
   or High priority is forced to `Belirsiz` instead. Mails are never moved; the owner

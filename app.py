@@ -38,15 +38,15 @@ DAYS_BACK = int(os.getenv("DAYS_BACK", "7") or "7")
 OUTPUT_FILE = os.getenv("OUTPUT_FILE", "email_report.xlsx").strip() or "email_report.xlsx"
 
 # Learning from the mailbox owner's own Outlook categories
-EXCLUDE_CATEGORIES = {c.strip().lower() for c in os.getenv("EXCLUDE_CATEGORIES", "Takip,Follow up").split(",") if c.strip()}
+EXCLUDE_CATEGORIES = {c.strip().lower() for c in os.getenv("EXCLUDE_CATEGORIES", "Follow up").split(",") if c.strip()}
 PROFILE_MAX_AGE_DAYS = int(os.getenv("PROFILE_MAX_AGE_DAYS", "7") or "7")
 LEARN_MAX_ITEMS = int(os.getenv("LEARN_MAX_ITEMS", "5000") or "5000")
 MAX_PROFILE_CATEGORIES = 60
 SENDER_RULE_MIN_MAILS = int(os.getenv("SENDER_RULE_MIN_MAILS", "3") or "3")  # filed mails before a sender decides the category
 SENDER_RULE_MIN_SHARE = float(os.getenv("SENDER_RULE_MIN_SHARE", "0.9") or "0.9")  # ...and how consistent they must be
 PROFILE_EXAMPLES = int(os.getenv("PROFILE_EXAMPLES", "0") or "0")  # example subjects per category in the prompt (0 = off)
-ARCHIVE_FOLDER = os.getenv("ARCHIVE_FOLDER", "2026").strip()  # folder the owner moves finished/unimportant mails to
-ARCHIVE_CATEGORY = os.getenv("ARCHIVE_CATEGORY", "2026'ya Aktarılabilir").strip()  # empty = feature off
+ARCHIVE_FOLDER = os.getenv("ARCHIVE_FOLDER", "Archive").strip()  # folder the owner moves finished/unimportant mails to
+ARCHIVE_CATEGORY = os.getenv("ARCHIVE_CATEGORY", "Can be archived").strip()  # empty = feature off
 EVAL_SAMPLE = int(os.getenv("EVAL_SAMPLE", "40") or "40")  # mails used by --evaluate
 ARCHIVE_MAX_ITEMS = int(os.getenv("ARCHIVE_MAX_ITEMS", "3000") or "3000")
 ARCHIVE_SENDER_GUARD = os.getenv("ARCHIVE_SENDER_GUARD", "false").strip().lower() in ("1", "true", "yes")  # never flag senders whose mail the owner has filed before
