@@ -20,3 +20,6 @@ araclar/
 internet/
 vekalet/
 vekalet_taslaklari/
+
+# Personal Claude instructions (contain names and addresses)
+CLAUDE.md
